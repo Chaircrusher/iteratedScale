@@ -69,6 +69,11 @@ int main(int argc, char **argv) {
 	// scale but it's easy make one that wanders.
 	std::sort(outVec.begin(),outVec.end());
 	// minimal scala file has one line of description
+	std::cout << "! Coefficients:";
+	for(const auto &coeff : coefficients) {
+		std::cout << " " << coeff;
+	}
+	std::cout << std::endl;
    std::cout << scaleName << std::endl;
 	// and one line that gives the size of the scale
    std::cout << outVec.size()+1 << std::endl;

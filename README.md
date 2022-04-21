@@ -13,7 +13,8 @@ Example:
 iteratedScale "My First iteratedScale" 1.08 0.05
 
 produces this Scala file:
-test
+```! Coefficients: 1.08 0.05
+My First iteratedScale
 7
 ! 1.08
 96.00
@@ -29,5 +30,4 @@ test
 1133.54
 ! octave
 1200.00
-
-
+```
