@@ -21,6 +21,16 @@ double polynomialFunc(const VecType &coefficients,
    return result;
 }
 
+// simple polynomial calculation based on history
+double polynomialFunc2(const VecType &coefficients,
+						const VecType &history) {
+   double result(0);
+   for(unsigned i = 0; i < coefficients.size(); ++i)
+      result += coefficients[i] * std::pow(history[i],
+														 static_cast<double>(i));
+   return result;
+}
+
 // shift in history. 
 void shift(VecType &vec, double current) {
 	// go through history backwards to move every value
@@ -63,7 +73,7 @@ int main(int argc, char **argv) {
          outVec.push_back(current);
 		// shift history
       shift(history,current);
-      current = polynomialFunc(coefficients, history);
+      current = polynomialFunc2(coefficients, history);
    }
 	// sort the results. You hope for a monotonically increasing
 	// scale but it's easy make one that wanders.
